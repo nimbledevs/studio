@@ -20,7 +20,7 @@ export default function Dashboard() {
               <CardContent>
                 <p>Next Payment: July 20, 2024</p>
                 <p>Amount: $9.99</p>
-                <Button variant="secondary">Manage</Button>
+                <Button>Subscribe Now</Button>
               </CardContent>
             </Card>
 
@@ -33,7 +33,7 @@ export default function Dashboard() {
               <CardContent>
                 <p>Next Payment: July 25, 2024</p>
                 <p>Amount: $29.99</p>
-                <Button variant="secondary">Manage</Button>
+                <Button>Subscribe Now</Button>
               </CardContent>
             </Card>
 
@@ -46,7 +46,7 @@ export default function Dashboard() {
               <CardContent>
                 <p>Next Payment: August 1, 2024</p>
                 <p>Amount: $11.99</p>
-                <Button variant="secondary">Manage</Button>
+                <Button>Subscribe Now</Button>
               </CardContent>
             </Card>
           </div>
