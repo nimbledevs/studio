@@ -1,4 +1,5 @@
 
+
 import { createMiddlewareClient } from '@supabase/auth-helpers-nextjs'
 import { NextResponse } from 'next/server'
 
@@ -13,8 +14,14 @@ export async function middleware(req: NextRequest) {
     return res; // Or potentially redirect to an error page
   }
 
-  const supabase = createMiddlewareClient({ req, res })
-  await supabase.auth.getSession()
+  const supabase = createMiddlewareClient({ req, res });
+  try {
+    await supabase.auth.getSession();
+  } catch (error) {
+    console.error('Failed to get session:', error);
+    // Handle error appropriately, e.g., redirect to an error page
+  }
   return res
 }
+
 

@@ -10,7 +10,7 @@ export default function Home() {
         {/* Example Subscription Card */}
         <Card>
           <CardHeader>
-            <CardTitle>Acme Software</CardTitle>
+            <CardTitle>Basic</CardTitle>
             <CardDescription>Basic Plan</CardDescription>
           </CardHeader>
           <CardContent>
@@ -23,7 +23,7 @@ export default function Home() {
         {/* Example Subscription Card */}
         <Card>
           <CardHeader>
-            <CardTitle>Stark Industries</CardTitle>
+            <CardTitle>Pro</CardTitle>
             <CardDescription>Pro Plan</CardDescription>
           </CardHeader>
           <CardContent>
@@ -36,7 +36,7 @@ export default function Home() {
         {/* Example Subscription Card */}
         <Card>
           <CardHeader>
-            <CardTitle>Wayne Enterprises</CardTitle>
+            <CardTitle>Basic</CardTitle>
             <CardDescription>Basic Plan</CardDescription>
           </CardHeader>
           <CardContent>
@@ -49,4 +49,5 @@ export default function Home() {
     </div>
   );
 }
+
 
