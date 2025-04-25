@@ -1,10 +1,14 @@
-
+'use client';
 
 import { DashboardSidebar } from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export default function Dashboard() {
+  const handleSubscribeClick = () => {
+    alert("Subscription functionality will be implemented soon!");
+  };
+
   return (
     <div className="flex h-screen bg-secondary">
       <DashboardSidebar />
@@ -20,7 +24,7 @@ export default function Dashboard() {
               <CardContent>
                 <p>Next Payment: July 20, 2024</p>
                 <p>Amount: $9.99</p>
-                <Button>Subscribe Now</Button>
+                <Button onClick={handleSubscribeClick}>Subscribe Now</Button>
               </CardContent>
             </Card>
 
@@ -33,7 +37,7 @@ export default function Dashboard() {
               <CardContent>
                 <p>Next Payment: July 25, 2024</p>
                 <p>Amount: $29.99</p>
-                <Button>Subscribe Now</Button>
+                <Button onClick={handleSubscribeClick}>Subscribe Now</Button>
               </CardContent>
             </Card>
 
@@ -46,7 +50,7 @@ export default function Dashboard() {
               <CardContent>
                 <p>Next Payment: August 1, 2024</p>
                 <p>Amount: $11.99</p>
-                <Button>Subscribe Now</Button>
+                <Button onClick={handleSubscribeClick}>Subscribe Now</Button>
               </CardContent>
             </Card>
           </div>
@@ -55,5 +59,3 @@ export default function Dashboard() {
     </div>
   );
 }
-
-

@@ -1,9 +1,13 @@
-
+'use client';
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
 export default function Home() {
+  const handleSubscribeClick = () => {
+    alert("Subscription functionality will be implemented soon!");
+  };
+
   return (
     <div className="container py-10">
       <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -16,7 +20,7 @@ export default function Home() {
           <CardContent>
             <p>Next Payment: July 20, 2024</p>
             <p>Amount: $9.99</p>
-            <Button>Subscribe Now</Button>
+            <Button onClick={handleSubscribeClick}>Subscribe Now</Button>
           </CardContent>
         </Card>
 
@@ -29,7 +33,7 @@ export default function Home() {
           <CardContent>
             <p>Next Payment: July 25, 2024</p>
             <p>Amount: $29.99</p>
-            <Button>Subscribe Now</Button>
+            <Button onClick={handleSubscribeClick}>Subscribe Now</Button>
           </CardContent>
         </Card>
 
@@ -42,12 +46,10 @@ export default function Home() {
           <CardContent>
             <p>Next Payment: August 1, 2024</p>
             <p>Amount: $11.99</p>
-            <Button>Subscribe Now</Button>
+            <Button onClick={handleSubscribeClick}>Subscribe Now</Button>
           </CardContent>
         </Card>
       </div>
     </div>
   );
 }
-
-
