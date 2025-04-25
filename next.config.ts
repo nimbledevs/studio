@@ -1,3 +1,4 @@
+
 import type {NextConfig} from 'next';
 
 const nextConfig: NextConfig = {
@@ -20,4 +21,7 @@ const nextConfig: NextConfig = {
   },
 };
 
+export const config = {
+  matcher: ['/dashboard'],
+}
 export default nextConfig;
