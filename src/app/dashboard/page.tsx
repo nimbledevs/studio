@@ -1,4 +1,5 @@
 
+
 import { DashboardSidebar } from "@/components/dashboard/Sidebar";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -13,12 +14,12 @@ export default function Dashboard() {
             {/* Example Subscription Card */}
             <Card>
               <CardHeader>
-                <CardTitle>Netflix</CardTitle>
-                <CardDescription>Premium Plan</CardDescription>
+                <CardTitle>Acme Software</CardTitle>
+                <CardDescription>Basic Plan</CardDescription>
               </CardHeader>
               <CardContent>
                 <p>Next Payment: July 20, 2024</p>
-                <p>Amount: $15.99</p>
+                <p>Amount: $9.99</p>
                 <Button variant="secondary">Manage</Button>
               </CardContent>
             </Card>
@@ -26,12 +27,12 @@ export default function Dashboard() {
             {/* Example Subscription Card */}
             <Card>
               <CardHeader>
-                <CardTitle>Spotify</CardTitle>
-                <CardDescription>Family Plan</CardDescription>
+                <CardTitle>Stark Industries</CardTitle>
+                <CardDescription>Pro Plan</CardDescription>
               </CardHeader>
               <CardContent>
                 <p>Next Payment: July 25, 2024</p>
-                <p>Amount: $14.99</p>
+                <p>Amount: $29.99</p>
                 <Button variant="secondary">Manage</Button>
               </CardContent>
             </Card>
@@ -39,8 +40,8 @@ export default function Dashboard() {
             {/* Example Subscription Card */}
             <Card>
               <CardHeader>
-                <CardTitle>YouTube Premium</CardTitle>
-                <CardDescription>Individual Plan</CardDescription>
+                <CardTitle>Wayne Enterprises</CardTitle>
+                <CardDescription>Basic Plan</CardDescription>
               </CardHeader>
               <CardContent>
                 <p>Next Payment: August 1, 2024</p>
@@ -54,3 +55,4 @@ export default function Dashboard() {
     </div>
   );
 }
+
