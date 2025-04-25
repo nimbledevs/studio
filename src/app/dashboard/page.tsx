@@ -1,12 +1,59 @@
 'use client';
 
-import { DashboardSidebar } from "@/components/dashboard/Sidebar";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import {DashboardSidebar} from '@/components/dashboard/Sidebar';
+import {Card, CardContent, CardDescription, CardHeader, CardTitle} from '@/components/ui/card';
+import {Button} from '@/components/ui/button';
+import {useState} from 'react';
+import {
+  AlertDialog,
+  AlertDialogAction,
+  AlertDialogCancel,
+  AlertDialogContent,
+  AlertDialogDescription,
+  AlertDialogFooter,
+  AlertDialogHeader,
+  AlertDialogTitle,
+  AlertDialogTrigger,
+} from '@/components/ui/alert-dialog';
 
 export default function Dashboard() {
+  const [open, setOpen] = useState(false);
+
   const handleSubscribeClick = () => {
-    alert("Subscription functionality will be implemented soon!");
+    setOpen(true);
+  };
+
+  const handlePayment = async (paymentMethod: string) => {
+    setOpen(false);
+    const paymentDetails = {
+      amount: 9.99, // Example amount, adjust as needed
+      currency: 'USD', // Example currency
+      description: 'Subscription Payment',
+    };
+
+    try {
+      const response = await fetch(`/api/${paymentMethod}`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(paymentDetails),
+      });
+
+      if (response.ok) {
+        const result = await response.json();
+        if (result.success) {
+          alert(`Payment successful! Transaction ID: ${result.transactionId}`);
+        } else {
+          alert('Payment failed. Please try again.');
+        }
+      } else {
+        alert('Payment processing error. Please try again.');
+      }
+    } catch (error) {
+      console.error('Payment error:', error);
+      alert('An unexpected error occurred. Please try again.');
+    }
   };
 
   return (
@@ -56,6 +103,24 @@ export default function Dashboard() {
           </div>
         </div>
       </div>
+      <AlertDialog open={open} onOpenChange={setOpen}>
+        <AlertDialogTrigger asChild>
+          {/* This trigger is not visible, it's just to manage the dialog state */}
+        </AlertDialogTrigger>
+        <AlertDialogContent>
+          <AlertDialogHeader>
+            <AlertDialogTitle>Choose a payment method</AlertDialogTitle>
+            <AlertDialogDescription>
+              Select your preferred payment method to proceed with the subscription.
+            </AlertDialogDescription>
+          </AlertDialogHeader>
+          <AlertDialogFooter>
+            <AlertDialogCancel onClick={() => setOpen(false)}>Cancel</AlertDialogCancel>
+            <AlertDialogAction onClick={() => handlePayment('braintree')}>Braintree</AlertDialogAction>
+            <AlertDialogAction onClick={() => handlePayment('paypal')}>PayPal</AlertDialogAction>
+          </AlertDialogFooter>
+        </AlertDialogContent>
+      </AlertDialog>
     </div>
   );
 }
